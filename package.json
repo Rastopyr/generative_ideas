@@ -1,0 +1,12 @@
+{
+  "name": "testing_ideas",
+  "version": "1.0.0",
+  "description": "Testing ideas for generative art",
+  "main": "index.js",
+  "repository": "https://github.com/Rastopyr/generative_ideas.git",
+  "author": "Rastopyr <rastopyr@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel": "^1.12.4"
+  }
+}
