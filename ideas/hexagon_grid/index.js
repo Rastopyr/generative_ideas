@@ -4,11 +4,9 @@ const draw = (sketch) => {
     const { windowWidth, windowHeight } = sketch;
 
     const colors = [
-      '#FF6F61',
-      '#EE6D8A',
-      '#D5D717',
-      '#7E5E9A',
-      '#98DDDF'
+      '#9800B8',
+      '#B83C00',
+      '#20B800'
     ];
 
     function polygon(x, y, radius, npoints) {
@@ -45,12 +43,12 @@ const draw = (sketch) => {
       }
 
       function strokedDouble(x, y, radius) {
-;
+        const strokedColor = sketch.random(colors)
 
         sketch.fill(0, 0, 0, 0);
 
 
-        sketch.stroke(sketch.random(colors));
+        sketch.stroke(strokedColor);
         polygon(
             x,
             y,
@@ -58,8 +56,7 @@ const draw = (sketch) => {
             6
         ); 
 
-        sketch.fill(0, 0, 0, 0);
-        sketch.stroke(sketch.random(colors));
+        sketch.fill(strokedColor);
         polygon(
             x,
             y,
@@ -75,9 +72,9 @@ const draw = (sketch) => {
       ]
 
 
-    const innerRectSide = 640;
+    const innerRectSide = 590;
     const cellCount = 4
-    const rowCount = 7
+    const rowCount = 5
     const grid = [];
     const cellSide = innerRectSide / cellCount;
     const startPoint = cellSide + 50;
@@ -90,8 +87,6 @@ const draw = (sketch) => {
             });
         }
     }
-
-    // console.log(cellSide, cellSide, )
 
     sketch.setup = () => {
         sketch.createCanvas(windowWidth, windowHeight);
@@ -116,4 +111,4 @@ const draw = (sketch) => {
     };
 }
 
-let myp5 = new p5(draw);
+new p5(draw);
